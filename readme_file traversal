@@ -1,6 +1,82 @@
-#文件遍历模块以及功能说明
-#os.walk() 方法用于通过在目录数种游走输出在目录中的文件名,向上或者向下
-#os.walk() 语法格式如下
-#os.walk(top,topdown=True,oneroor=None,followlinks=False)
+两种方法遍历文件夹
+1、使用os.listdir
+2、使用os.walk
 
-#1、第一个参数fpath 时遍历打印所有的文件路径
+python os 标准模块使用(os 模块封装了常见得文件和目录操作，下面只列出部分常用得方法)
+
+os.path.abspath  获取文件或目录得绝对路径
+
+import os
+>>>os.path.abspath('hello.py')
+'/usr/ethan/coding/python/hello.py'
+
+>>>os.path.abspath('.')                         #当前目录得绝对路劲
+/usr/ethan/coding/python
+
+
+os.path.dirname  获取文件或文件夹得路径
+
+>>>os.path.dirname('/Users/ethan/coding/python/hello.py')
+'/Users/ethan/coding/python'
+
+>>>os.path.dirname('/Users/ethan/coding/python/')               #注意后面路径
+'/Users/ethan/coding/python'
+
+>>>os.path.dirname('/Users/ethan/coding/python')
+'/Users/ethan/coding'
+另外一种方法
+import os
+d = os.getcwd()
+print(d)
+
+os.path.basename   获取文件名或者文件夹名
+>>>.os.path.basename('/Users/ethan/coding/python/hello.py')
+hello.py
+
+>>>os.path.basename('/Users/ethan/coding/python/')
+..
+
+>>>os.path.basename('/Users/ethan/coding/python')
+python
+
+os.path.splitext   分离文件名与扩展名
+>>>os.path.splitext('/Users/ethan/coding/python/hello.py')
+'/Users/ethan/coding/python/hello','.py'
+
+>>>.os.path.splitext('/Users/ethan/coding/python')
+'/Users/ethan/coding/python',''
+
+>>>os.split.splitext('/Users/ethan/coding/python/')
+'/Users/ethan/coding/python/',''
+
+
+os.path.split  分离目录与文件名
+>>>os.path.split('/Users/ethan/coding/python/hello.py')
+'/Users/ethan/coding/python','hello.py'
+
+>>>os.path.split('/Users/ethan/coding/python/')
+'/Users/ethan/coding/python',''
+
+>>>os.path.split('/Users/ethan/coding/python')
+'/Users/ethan/coding','python'
+
+os,path.join(path,name) 拼接文件目录
+#__file__是内置变量，代表的就是当前运行的程序文件D:\LearnTool\pycode\part1
+import os
+d1 = os.path.dirname(__file__)
+d2 = os.path.join(d1,"cache")
+d3 = os.path.join(d1,"cache","hello")
+print(d2)
+print(d3)
+输出：
+D:\LearnTool\pycode\part1\cache
+D:\LearnTool\pycode\part1\cache\hello
+
+os.name 获取当前使用系统平台
+import  os
+d1 = os.name
+print(d1)
+
+
+os.mkdir  创建单级目录
+os.makedirs(path)  创建多级目录
