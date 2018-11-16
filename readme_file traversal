@@ -1,0 +1,6 @@
+#文件遍历模块以及功能说明
+#os.walk() 方法用于通过在目录数种游走输出在目录中的文件名,向上或者向下
+#os.walk() 语法格式如下
+#os.walk(top,topdown=True,oneroor=None,followlinks=False)
+
+#1、第一个参数fpath 时遍历打印所有的文件路径
