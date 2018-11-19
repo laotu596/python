@@ -1,11 +1,11 @@
 import datetime,time
 
 #datetime 模块定义了下面的几个类
-#datetime。date  表示日期的类，常用的属性有year、month、day；
+#datetime.date  表示日期的类，常用的属性有year、month、day
 #datetime.time   表示时间的类，常用的属性有hour、minute、second、microsecond
-#datetime.datetime  表示日期时间
+#datetime.datetime  表示日期+ 时间
 #datetimne.timedalta   表示时间间隔，即俩个时间点之间的长度
-#datetime。tzinfo   与时区有关的相关信息
+#datetime.tzinfo   与时区有关的相关信息
 
 
 #datetime.date 类
@@ -32,3 +32,16 @@ print(datetime.time(16,24,15).minute)
 print(datetime.time(16,24,15).second)
 print(datetime.time(16,24,15).isoformat())
 print(datetime.time(16,24,15).strftime('%H:%M:%S'))
+
+
+#time 模块
+#时间戳   1970年1月1日之后的秒   即 time.time()
+#格式化的字符串   2014-11-11 11:11   time.strftime('%Y-%m-%d')
+#结构化时间  元组包含了 年、日、星期等   即time.localtime()
+
+#import time
+#print(time.strftime("%Y-%m-%d %H-%M-%S",time.localtime()))
+#2016-04-09  11:18:05
+
+#推迟条用线程的运行、secs 指秒数
+#time.sleep(5)
