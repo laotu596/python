@@ -1,4 +1,6 @@
 两种方法遍历文件夹
+程序包括file traversal.py  和file traversal2.py
+
 1、使用os.listdir
 2、使用os.walk
 
@@ -80,3 +82,6 @@ print(d1)
 
 os.mkdir  创建单级目录
 os.makedirs(path)  创建多级目录
+os.getcwd()    返回工作目录
+os.chdir()     改变工作目录
+os.system(command) 运行系统得shell命令
