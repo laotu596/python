@@ -1,0 +1,53 @@
+数据结构
+
+#字典的特点: 无序、键唯一
+#字典中的键是唯一的需要使用不可变类型作为键名
+#值是可以为列表、字典、整形、字符串、元组
+
+#字典-操作
+
+#定义字典
+#字典用{} 标识，它时一个无序的键（key）：值（value）对集合
+
+第一种方法#定义字典为空 动态填充新的键和值
+#dict = {}
+#dict['name'] = 'Lilei'
+#print(dict)
+#{'name':'Lilei'}
+
+#第二种方法 用列表动态生成字典
+key_list = ['a','b','c']
+value_list = [11,22,33]
+D = dick(zip(key_list,value_list))
+print(D)
+
+#第三种方法 用键值对元组组成的列表构造字典
+D = dict([('aa',11),('bb',22),('cc',33)])
+print(D)
+
+#第四种方法 字典推导式
+{x:x**2 for x in (2,4,6)}
+{2:4,4:16.6:36}
+
+
+#对于一个字典执行 list(dict.keys())  将返回一个字典中所有关键字组成的无序列表（如果想要排序 使用sorted(dict.keys()）
+dict = {'a':11,'b':22,'c':33,'d':44,'e':55}
+print(list(dict.keys()))                        #同样list.items()  可以同时获得键值的列表
+['b','a','c','e','a']
+
+#如果需要一次性生成所有的键
+dict = {'a':11,'b':22,'c':33,'d':44,'e':55}
+print(list(dict.vaules()))
+[11,33,22,55,44]
+#使用in 关键字，可以检查字典中是否存在某个关键字
+
+#字典循环技巧
+在字典中循环时，关键字和对应的值可以使用items()方法解读出来
+knights = {'gallahad':'the pure','robin':'the brave'}
+for k,v in knights.items():
+    print(k,v)
+
+#字典中相关函数和方法
+len(dict)    返回字典中元素个数
+dict.get(key[,default]) 在返回指定键的值，如果键不在字典中，返回default值
+dict.setdefault(key,default=None) 和get 类似，但如果键不存在于字典中，将会添加键并将值设为default
