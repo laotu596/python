@@ -36,4 +36,4 @@ def write_excel_openpyxl(datas,filename):
         for j in range(1,len(row0)+1):
             ws.cell(row=i+1,column=j).value=datas[i-1][j-1]
     wb.save(filename = filename)
-write_excel_openpyxl(datas,'d:\\demo3.xlsx')
+write_excel_openpyxl(datas,'d:\\python\\openpyxl-mysql.xlsx')
